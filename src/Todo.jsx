@@ -1,6 +1,6 @@
 import React, { useReducer, useState } from "react";
 import reducer from "./reducer/todoReducer";
-import { Button, Card, Checkbox, Container, TextField } from "@mui/material";
+import { Button, Checkbox, Container, TextField } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 import "./style/todo.css";
@@ -29,7 +29,14 @@ const Todo = () => {
     <Container maxWidth="sm">
       <div className="center-card">
         <div>
-          <h1>Todo List</h1>
+          <div className="header-container">
+            <div className="textCenter">
+              <h1>Todo List</h1>
+            </div>
+            <div className="loginBtn">
+              <Button variant="contained">Login</Button>
+            </div>
+          </div>
           <TextField
             variant="standard"
             placeholder="Type here"

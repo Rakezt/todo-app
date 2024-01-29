@@ -20,3 +20,11 @@ body {
   cursor: pointer;
   color: #1976d2;
 }
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.textCenter {
+  margin-left: 30%;
+}
