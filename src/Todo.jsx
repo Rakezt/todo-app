@@ -1,8 +1,9 @@
 import React, { useReducer, useState } from "react";
 import reducer from "./reducer/todoReducer";
-import { Button, Card, Container, TextField } from "@mui/material";
+import { Button, Card, Checkbox, Container, TextField } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
+import "./style/todo.css";
 
 const initialState = [];
 
@@ -15,7 +16,7 @@ const Todo = () => {
   };
   const AddItem = () => {
     dispatch({ type: "ADD_ITEM", payload: input });
-    setInput(" ");
+    setInput("");
   };
   const deleteItem = (id) => {
     dispatch({ type: "DELETE_ITEM", payload: id });
@@ -26,8 +27,8 @@ const Todo = () => {
 
   return (
     <Container maxWidth="sm">
-      <Card variant="outlined">
-        <div className="center-card">
+      <div className="center-card">
+        <div>
           <h1>Todo List</h1>
           <TextField
             variant="standard"
@@ -43,24 +44,20 @@ const Todo = () => {
               return (
                 <li
                   key={index}
+                  className="inputType"
                   style={{ textDecoration: item.done ? "line-through" : "" }}
                 >
-                  {item.name}{" "}
-                  <Button
-                    variant="contained"
-                    onClick={() => markAsDone(item.id)}
-                  >
-                    {item.done ? "Undone" : "Done"}
-                  </Button>
-                  <Button variant="contained">
+                  {item.name}
+                  <Checkbox onClick={() => markAsDone(item.id)} />
+                  <div className="deleteBtn">
                     <DeleteIcon onClick={() => deleteItem(item.id)} />
-                  </Button>
+                  </div>
                 </li>
               );
             })}
           </ol>
         </div>
-      </Card>
+      </div>
     </Container>
   );
 };

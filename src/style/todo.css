@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap");
+body {
+  background-color: #1976d2;
+  font-family: "Lato", sans-serif;
+}
+.center-card {
+  margin: 20% auto;
+  place-content: center;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.inputType {
+  text-align: left;
+  padding: 0.3rem;
+}
+.deleteBtn {
+  float: right;
+  cursor: pointer;
+  color: #1976d2;
+}
