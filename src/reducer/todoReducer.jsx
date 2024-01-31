@@ -15,6 +15,8 @@ const todoReducer = (state, action) => {
       return state.map((item) =>
         item.id === action.payload ? { ...item, done: !item.done } : item
       );
+    case "SET_TODO_LIST":
+      return action.payload;
 
     default:
       return state;
